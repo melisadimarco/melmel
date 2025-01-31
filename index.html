@@ -76,28 +76,49 @@
 								<header>
 									<h2>Hablemos</h2>
 								</header>
-								<form action="https://formsubmit.co/melisadimarco1@gmail.com" method="post">
+								<form id="formulario">
+									<label for="nombre">Nombre:</label>
+									<input type="text" id="nombre" name="nombre" required><br><br>
+									
+									<label for="email">Correo Electrónico:</label>
+									<input type="email" id="email" name="email" required><br><br>
+									
+									<label for="mensaje">Mensaje:</label><br>
+									<textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea><br><br>
+									
+									<input type="submit" value="Enviar">
+								  </form>
 								
-									<div>
-										<div class="row">
-											<div class="col-6 col-12-medium">
-												<input type="text" name="name" placeholder="Nombre" />
-											</div>
-											<div class="col-6 col-12-medium">
-												<input type="text" name="email" placeholder="Email" />
-											</div>
-											<div class="col-12">
-												<input type="text" name="subject" placeholder="Asunto" />
-											</div>
-											<div class="col-12">
-												<textarea name="message" placeholder="Mensaje" rows="6"></textarea>
-											</div>
-											<div class="col-12">
-												<input type="submit" value="Enviar"/> 
-											</div>
-										</div>
-									</div>
-								</form>
+								
+								  <div id="resultado"></div>
+								
+								  <script>
+									// Captura el formulario
+									const formulario = document.getElementById("formulario");
+									
+									// Agrega un evento para cuando se envíe el formulario
+									formulario.addEventListener("submit", function(evento) {
+									  // Prevenir que se recargue la página al enviar el formulario
+									  evento.preventDefault();
+									  
+									  // Obtener los valores del formulario
+									  const nombre = document.getElementById("nombre").value;
+									  const email = document.getElementById("email").value;
+									  const mensaje = document.getElementById("mensaje").value;
+									  
+									  // Muestra los datos en la página (puedes hacer lo que quieras con ellos)
+									  const resultado = document.getElementById("resultado");
+									  resultado.innerHTML = `
+										<p><strong>Nombre:</strong> ${nombre}</p>
+										<p><strong>Email:</strong> ${email}</p>
+										<p><strong>Mensaje:</strong> ${mensaje}</p>
+									  `;
+									  
+									  // Opcional: Limpiar el formulario después de enviarlo
+									  formulario.reset();
+									});
+								  </script>
+								
 							</article>
 
 					</div>
