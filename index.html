@@ -76,7 +76,7 @@
 								<header>
 									<h2>Hablemos</h2>
 								</header>
-								<form id="formulario">
+								<form action="procesar_formulario.php" method="POST">
 									<label for="nombre">Nombre:</label>
 									<input type="text" id="nombre" name="nombre" required><br><br>
 									
@@ -89,35 +89,6 @@
 									<input type="submit" value="Enviar">
 								  </form>
 								
-								
-								  <div id="resultado"></div>
-								
-								  <script>
-									// Captura el formulario
-									const formulario = document.getElementById("formulario");
-									
-									// Agrega un evento para cuando se envíe el formulario
-									formulario.addEventListener("submit", function(evento) {
-									  // Prevenir que se recargue la página al enviar el formulario
-									  evento.preventDefault();
-									  
-									  // Obtener los valores del formulario
-									  const nombre = document.getElementById("nombre").value;
-									  const email = document.getElementById("email").value;
-									  const mensaje = document.getElementById("mensaje").value;
-									  
-									  // Muestra los datos en la página (puedes hacer lo que quieras con ellos)
-									  const resultado = document.getElementById("resultado");
-									  resultado.innerHTML = `
-										<p><strong>Nombre:</strong> ${nombre}</p>
-										<p><strong>Email:</strong> ${email}</p>
-										<p><strong>Mensaje:</strong> ${mensaje}</p>
-									  `;
-									  
-									  // Opcional: Limpiar el formulario después de enviarlo
-									  formulario.reset();
-									});
-								  </script>
 								
 							</article>
 
